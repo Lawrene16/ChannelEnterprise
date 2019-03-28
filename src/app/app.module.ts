@@ -10,6 +10,7 @@ import { PairingPage } from '../pages/pairing/pairing';
 import { DeviceconnectedPage } from '../pages/deviceconnected/deviceconnected';
 import { AlertledPage } from '../pages/alertled/alertled';
 import { SoundprefPage } from '../pages/soundpref/soundpref';
+import { NeverforgetalertPage } from '../pages/neverforgetalert/neverforgetalert';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SoundprefPage } from '../pages/soundpref/soundpref';
     HomePage,
     AlertledPage,
     SoundprefPage,
+    NeverforgetalertPage,
     PairingPage,
     DeviceconnectedPage,
   ],
@@ -30,6 +32,7 @@ import { SoundprefPage } from '../pages/soundpref/soundpref';
     SoundprefPage,
     HomePage,
     AlertledPage,
+    NeverforgetalertPage,
     PairingPage,
     DeviceconnectedPage
   ],

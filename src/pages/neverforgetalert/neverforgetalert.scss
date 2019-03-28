@@ -1,0 +1,38 @@
+page-neverforgetalert {
+    .backgroundcont{
+        overflow: hidden;
+        background: color($colors, custombackground);
+    }
+
+    .topcont{
+        margin-top: 10px;
+        margin-left: 10px;
+        padding-top: 1vh;
+        margin-right: 10px;
+        background: color($colors, outerblack);
+        height: 10vh;
+        padding-bottom: 5px; 
+    }
+
+    .middlecont{
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background: color($colors, outerblack);
+        height: 37vh;
+        padding-bottom: 5px;
+    }
+    
+    .bottomcont{
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background: color($colors, outerblack);
+        height: 41vh;
+        padding-bottom: 5px;
+    }
+
+    .testcols{
+        height: 25vh;
+    }
+}

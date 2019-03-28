@@ -7,11 +7,12 @@ import { DeviceconnectedPage } from '../pages/deviceconnected/deviceconnected';
 import { HomePage } from '../pages/home/home';
 import { AlertledPage } from '../pages/alertled/alertled';
 import { SoundprefPage } from '../pages/soundpref/soundpref';
+import { NeverforgetalertPage } from '../pages/neverforgetalert/neverforgetalert';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SoundprefPage;
+  rootPage:any = NeverforgetalertPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
