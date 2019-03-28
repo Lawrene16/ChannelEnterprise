@@ -1,3 +1,23 @@
 page-home {
 
+    .backgroundcont{
+        background: color($colors, custombackground);
+    }
+
+    .bottomcontainer{
+        height: 60vh; 
+        margin: 10px;
+        background: color($colors, outerblack);  
+    }
+
+    .bottombutton{
+        text-align: center;
+        position: absolute;
+        padding-left: 100px;
+        padding-right: 100px;
+        width: 100vw;
+        left: 0vw;
+        bottom: 2vh;        
+        z-index: 5;
+    }
 }

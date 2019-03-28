@@ -1,14 +1,39 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content class="backgroundcont">
+  <div style="height: 30vh;">
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    
+  </div>
+
+  <ion-segment padding [(ngModel)]="devicetype" color="outerblack" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="searched">
+      SEARCHED
+    </ion-segment-button>
+    <ion-segment-button value="paired">
+      PAIRED
+    </ion-segment-button>
+  </ion-segment>
+
+  <div padding class="bottomcontainer">
+    <ion-grid>
+
+
+      <ion-row style="margin-bottom: 20px;" *ngFor="let device of testList">
+        <ion-col col-1 style="margin-right: 10px;">
+            <ion-checkbox>
+
+              </ion-checkbox>
+        </ion-col>
+
+        <ion-col style="color: white">
+          UA42QT-V<br>xx.xx.xx.xx.xx
+        </ion-col>
+       
+      </ion-row>
+    </ion-grid>
+
+    <p *ngIf="isSearchedEmpty" style="bottom: 15vh; font-size: 19px; position: absolute; color:white" align="center">No devices found<br>please check that your device is at pairing mode</p>
+
+    <p class="bottombutton" align="center"><button ion-button block color="primary">Connect</button></p>
+  </div>
+
 </ion-content>

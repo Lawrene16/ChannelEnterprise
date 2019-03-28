@@ -1,0 +1,24 @@
+page-deviceconnected {
+
+    .backgroundcont{
+        background: color($colors, custombackground);
+    }
+
+    .topcont{
+        margin: 10px;
+        background: color($colors, outerblack);
+        height: 40vh;
+    }
+
+    .bottomcont{
+        margin: 10px;
+        background: color($colors, outerblack);
+        height: 40vh;
+    }
+
+    .bottomcol{
+        text-align: center;
+        background: color($colors, navbarscolor);
+        height: 7.3vh;      
+    }
+}
