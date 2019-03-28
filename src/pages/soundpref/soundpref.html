@@ -1,0 +1,152 @@
+<ion-header>
+    <ion-navbar color="navbarscolor">
+      <ion-title>UA42QT-V</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="backg">
+  <div class="topcont">
+      <ion-grid>
+          <ion-row>
+            <ion-col style="margin-left: 20px; color: white; font-size: 20px">
+                Bass Booster
+            </ion-col>
+  
+            <ion-col col-2>
+              <ion-toggle  checked="true"></ion-toggle>              
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col style="margin-left: 20px; color: white; font-size: 20px">
+                  3D
+              </ion-col>
+    
+              <ion-col col-2>
+                <ion-toggle checked="true"></ion-toggle>              
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+                <ion-col style="margin-left: 20px; color: white; font-size: 20px">
+                    Equalizer
+                </ion-col>
+      
+                <ion-col col-2>
+                  <ion-toggle  checked="true"></ion-toggle>              
+                </ion-col>
+          </ion-row>
+        </ion-grid>
+  </div>
+
+  <div class="middlecont">
+    <div>
+        <input #ranger class="firstrange" 
+        type="range" min="0" max="20" step="1" value="4">
+        <p class="firstbottom">60Hz</p>
+        <p class="firsttop">3db</p>
+    </div>
+
+    <div>
+        <input #ranger class="secondrange" 
+        type="range" min="0" max="20" step="1" value="16">
+        <p class="secondbottom">630Hz</p>
+        <p class="secondtop">3db</p>
+    </div>
+
+    <div>
+        <input #ranger class="thirdrange" 
+        type="range" min="0" max="20" step="1" value="4">
+        <p class="thirdbottom">910Hz</p>
+        <p class="thirdtop">3db</p>
+    </div>
+
+    <div>
+        <input #ranger class="fourthrange" 
+        type="range" min="0" max="20" step="1" value="10">
+        <p class="fourthbottom">3.6khz</p>
+        <p class="fourthtop">3db</p>
+    </div>
+
+    <div>
+        <input #ranger class="fifthrange" 
+        type="range" min="0" max="20" step="1" value="4">
+        <p class="fifthbottom">14kHyz</p>
+        <p class="fifthtop">3db</p>
+    </div>
+    
+  </div>
+
+  <div class="bottomcont">
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+           <!-- <ion-segment padding [(ngModel)]="devicetype" color="primary" (ionChange)="segmentChanged($event)"> -->
+            <ion-row
+             (click) = "swapRow(1)"  
+             [ngStyle] = "{'color': colorOne}"
+             style="border: white" class="bottomrow">
+                Normal
+            </ion-row>
+
+            <ion-row 
+            (click) = "swapRow(2)"
+            [ngStyle] = "{'color': colorTwo}"            
+             class="bottomrow">
+                Classical Dance
+            </ion-row>
+
+            <ion-row 
+            (click) = "swapRow(3)"
+            [ngStyle] = "{'color': colorThree}"            
+             class="bottomrow">               
+              Flat
+            </ion-row>
+
+            <ion-row 
+            (click) = "swapRow(4)"
+            [ngStyle] = "{'color': colorFour}"            
+             class="bottomrow">   
+                Folk
+            </ion-row>
+            
+            <ion-row 
+            (click) = "swapRow(5)"
+            [ngStyle] = "{'color': colorFive}"            
+             class="bottomrow">  
+                Heavy Metal
+            </ion-row>
+            
+            <ion-row 
+            (click) = "swapRow(6)"
+            [ngStyle] = "{'color': colorSix}"            
+             class="bottomrow">  
+                Hip Hop
+            </ion-row>
+
+            <ion-row 
+            (click) = "swapRow(7)"
+            [ngStyle] = "{'color': colorSeven}"            
+             class="bottomrow">  
+                Jazz
+            </ion-row>
+            <!-- </ion-segment> -->
+        </ion-col>
+
+        <ion-col>
+            <p  align="center">
+                <button ion-button block
+                [ngStyle] = "{'background-color': buttondef}"            
+                 (click)="testSelectDevice()">Save</button></p>
+
+            <ion-icon name="ios-volume-up"
+            color="white"
+             style="font-size: 50px;
+             position: absolute; bottom: 2vh; right: 3vh;"></ion-icon>     
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+          
+        
+  </div>
+</ion-content>

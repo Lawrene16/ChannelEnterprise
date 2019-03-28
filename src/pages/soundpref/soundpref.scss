@@ -1,0 +1,171 @@
+page-soundpref {
+    .backg{
+        background: color($colors, custombackground);
+    }
+
+    .topcont{
+        margin: 8px;
+        background: color($colors, outerblack);     
+        height: 20vh;   
+    }
+
+    .middlecont{
+        margin: 8px;
+        background: color($colors, outerblack);     
+        height: 38vh;   
+    }
+
+    .bottomcont{
+        margin: 8px;
+        background: color($colors, outerblack);     
+        height: 31vh;
+    }
+
+    .firstrange{
+        transform: rotate(90deg); 
+        width: 25vh;
+        margin-top: 18vh;
+        height: 20px;
+        position: absolute;
+        z-index: 5;
+        left: -8vw;
+    }
+
+    .firstbottom{
+        position: absolute;
+        z-index: 5;
+        left: 10vw;
+        bottom: 32vh;
+        color: white;
+        font-size: 18px;
+    }
+
+    .firsttop{
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        z-index: 5;
+        left: 10vw;
+        top: 22vh;
+    }
+
+    .secondrange{
+        transform: rotate(90deg); 
+        width: 25vh;
+        margin-top: 18vh;
+        height: 20px;
+        position: absolute;
+        z-index: 5;
+        left: 8vw;
+    }
+
+    .secondbottom{
+        position: absolute;
+        z-index: 5;
+        left: 26vw;
+        bottom: 32vh;
+        color: white;
+        font-size: 18px;
+    }
+
+    .secondtop{
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        z-index: 5;
+        left: 26vw;
+        top: 22vh;
+    }
+
+    .thirdrange{
+        transform: rotate(90deg); 
+        width: 25vh;
+        margin-top: 18vh;
+        height: 20px;
+        position: absolute;
+        z-index: 5;
+        left: 24vw;
+    }
+
+    .thirdbottom{
+        position: absolute;
+        z-index: 5;
+        left: 42vw;
+        bottom: 32vh;
+        color: white;
+        font-size: 18px;
+    }
+
+    .thirdtop{
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        z-index: 5;
+        left: 42vw;
+        top: 22vh;
+    }
+
+    .fourthrange{
+        transform: rotate(90deg); 
+        width: 25vh;
+        margin-top: 18vh;
+        height: 20px;
+        position: absolute;
+        z-index: 5;
+        left: 42vw;
+    }
+
+    .fourthbottom{
+        position: absolute;
+        z-index: 5;
+        left: 60vw;
+        bottom: 32vh;
+        color: white;
+        font-size: 18px;
+    }
+
+    .fourthtop{
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        z-index: 5;
+        left: 60vw;
+        top: 22vh;
+    }
+    
+    .fifthrange{
+        transform: rotate(90deg); 
+        width: 25vh;
+        margin-top: 18vh;
+        height: 20px;
+        position: absolute;
+        z-index: 5;
+        left: 64vw;
+    }
+
+    .fifthbottom{
+        position: absolute;
+        z-index: 5;
+        left: 78vw;
+        bottom: 32vh;
+        color: white;
+        font-size: 18px;
+    }
+
+    .fifthtop{
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        z-index: 5;
+        left: 82vw;
+        top: 22vh;
+    }
+    
+    .bottomrow{
+        // background: color($colors, outerblack); 
+        padding: 6px;
+        // color: white;
+    }
+
+
+}

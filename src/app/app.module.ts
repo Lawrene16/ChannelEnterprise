@@ -9,12 +9,14 @@ import { HomePage } from '../pages/home/home';
 import { PairingPage } from '../pages/pairing/pairing';
 import { DeviceconnectedPage } from '../pages/deviceconnected/deviceconnected';
 import { AlertledPage } from '../pages/alertled/alertled';
+import { SoundprefPage } from '../pages/soundpref/soundpref';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AlertledPage,
+    SoundprefPage,
     PairingPage,
     DeviceconnectedPage,
   ],
@@ -25,6 +27,7 @@ import { AlertledPage } from '../pages/alertled/alertled';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    SoundprefPage,
     HomePage,
     AlertledPage,
     PairingPage,
