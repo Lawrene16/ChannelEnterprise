@@ -1,33 +1,50 @@
-<!--
-  Generated template for the DeviceconnectedPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar color="navbarscolor">
     <ion-title>UA42QT-V</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="backgroundcont">
-  <div class="topcont">
 
+<ion-content class="backgroundcont">
+    <ion-segment
+     style="margin-top: 10px; margin-left: 10px;
+      margin-right: 10px;width: 95vw"
+       [(ngModel)]="connectiontype" 
+       color="outerblack" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="edr">
+          EDR-{{state}}
+        </ion-segment-button>
+        <ion-segment-button value="ble">
+          BLE-{{state}}
+        </ion-segment-button>
+    </ion-segment>
+
+  <div class="topcont">
+      <p align="center"><img height="210vh" src="../../assets/icon/headseticon.jpg"></p>
+          <ion-icon right style="font-size: 50px;  position: absolute; z-index: 5; bottom: 52vh; right: 7vw" name="ios-volume-up" color="white"></ion-icon>
   </div>
 
   <div class="bottomcont">
-
+    <ion-list>
+      <ion-grid>
+        <ion-row  *ngFor="let option of optionsList" (click)="openOptions(option)">
+            <ion-col col-2><img height="21px"  src="{{option.icon}}"></ion-col>
+            <ion-col col-9 style="color:white; font-size: 18px">{{option.title}}</ion-col>
+            <ion-col col-1>
+                <ion-icon name="arrow-forward" color="white"></ion-icon> 
+            </ion-col>
+        </ion-row>
+      </ion-grid>  
+    </ion-list>
   </div>
 
-  <ion-grid style="height: 12vh;">
+  <ion-grid class="my-grid">
     <ion-row>
       <ion-col class="bottomcol">
       </ion-col>
-
       <ion-col class="bottomcol">
           <img src="../../assets/logo/setting_icon.png" height="35px">        
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>
