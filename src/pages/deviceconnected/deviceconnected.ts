@@ -46,5 +46,4 @@ export class DeviceconnectedPage {
   gotoNextPage(title){
     console.log(title);
   }
-
 }

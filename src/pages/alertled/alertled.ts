@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the PairingPage page.
+ * Generated class for the AlertledPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-pairing',
-  templateUrl: 'pairing.html',
+  selector: 'page-alertled',
+  templateUrl: 'alertled.html',
 })
-
-export class PairingPage {
+export class AlertledPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PairingPage');
+    console.log('ionViewDidLoad AlertledPage');
   }
-
 
 }

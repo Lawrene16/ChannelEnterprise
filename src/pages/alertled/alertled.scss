@@ -1,0 +1,11 @@
+page-alertled {
+    .backg{
+        background: color($colors, custombackground);
+    }
+
+    .holdercont{
+        margin: 10px;
+        background: color($colors, outerblack);     
+        height: 90.3vh;   
+    }
+}

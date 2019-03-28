@@ -4,11 +4,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { DeviceconnectedPage } from '../pages/deviceconnected/deviceconnected';
+import { HomePage } from '../pages/home/home';
+import { AlertledPage } from '../pages/alertled/alertled';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = DeviceconnectedPage;
+  rootPage:any = AlertledPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

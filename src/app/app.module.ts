@@ -8,11 +8,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PairingPage } from '../pages/pairing/pairing';
 import { DeviceconnectedPage } from '../pages/deviceconnected/deviceconnected';
+import { AlertledPage } from '../pages/alertled/alertled';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    AlertledPage,
     PairingPage,
     DeviceconnectedPage,
   ],
@@ -24,6 +26,7 @@ import { DeviceconnectedPage } from '../pages/deviceconnected/deviceconnected';
   entryComponents: [
     MyApp,
     HomePage,
+    AlertledPage,
     PairingPage,
     DeviceconnectedPage
   ],

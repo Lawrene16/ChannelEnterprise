@@ -1,8 +1,6 @@
 <ion-content class="backgroundcont">
-  <div style="height: 30vh;">
-
-    
-  </div>
+  <p align="center"><img src="../../assets/icon/ixchange.jpg" 
+    style="height: 23vh; zoom: 100%"></p>
 
   <ion-segment padding [(ngModel)]="devicetype" color="outerblack" (ionChange)="segmentChanged($event)">
     <ion-segment-button value="searched">
@@ -25,7 +23,7 @@
         </ion-col>
 
         <ion-col style="color: white">
-          UA42QT-V<br>xx.xx.xx.xx.xx
+          {{device.name}}<br>{{device.address}}
         </ion-col>
        
       </ion-row>
@@ -33,7 +31,8 @@
 
     <p *ngIf="isSearchedEmpty" style="bottom: 15vh; font-size: 19px; position: absolute; color:white" align="center">No devices found<br>please check that your device is at pairing mode</p>
 
-    <p class="bottombutton" align="center"><button ion-button block color="primary">Connect</button></p>
+    <p class="bottombutton" align="center">
+      <button ion-button block color="primary" (click)="testSelectDevice()">Connect</button></p>
   </div>
 
 </ion-content>

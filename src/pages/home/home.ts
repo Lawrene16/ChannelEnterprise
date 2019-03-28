@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, ToastController } from 'ionic-angular';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { resolveDefinition } from '@angular/core/src/view/util';
+import { PairingPage } from '../pairing/pairing';
 
 
 @Component({
@@ -25,6 +26,12 @@ export class HomePage {
     public bluetoothSerial: BluetoothSerial
   ) {
 
+    this.testList = [
+      {name: "UA42QT-V", address: "xx.xx.xx.xx.xx"},
+      {name: "UA43QT-V", address: "xx.xx.xx.xx.xx"},
+      {name: "CK-08", address: "xx.xx.xx.xx.xx"},      
+     ];
+
     this.devicetype = "searched";
     this.checkIfListIsEmpty();
       // this.checkBluetoothEnabled();
@@ -37,7 +44,6 @@ export class HomePage {
       this.isSearchedEmpty = false;
     }
   }
-
 
   checkBluetoothEnabled(){
     this.bluetoothSerial.isEnabled().then(() =>{
@@ -60,6 +66,10 @@ export class HomePage {
     });
   }
 
+  testSelectDevice(){
+    this.navCtrl.push(PairingPage);
+  }
+  
   selectDevice(){
     let connectedDevice = this.pairedList[this.pairedDeviceID];
     if(!connectedDevice.address){
