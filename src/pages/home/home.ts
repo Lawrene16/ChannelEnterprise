@@ -15,8 +15,10 @@ export class HomePage {
   listToggle: boolean = false;
   pairedDeviceID: number = 0;
   dataSend: string = "";
-  // testList = [];
-  testList = [{},{},{}];  
+  address;
+  name;
+  testList = [];
+  // testList = [{},{},{}];  
   devicetype;
   isSearchedEmpty = true;
 
@@ -26,19 +28,21 @@ export class HomePage {
     public bluetoothSerial: BluetoothSerial
   ) {
 
-    this.testList = [
-      {name: "UA42QT-V", address: "xx.xx.xx.xx.xx"},
-      {name: "UA43QT-V", address: "xx.xx.xx.xx.xx"},
-      {name: "CK-08", address: "xx.xx.xx.xx.xx"},      
-     ];
+    // this.testList = [
+    //   {name: "UA42QT-V", address: "xx.xx.xx.xx.xx"},
+    //   {name: "UA43QT-V", address: "xx.xx.xx.xx.xx"},
+    //   {name: "CK-08", address: "xx.xx.xx.xx.xx"},      
+    //  ];
 
     this.devicetype = "searched";
     this.checkIfListIsEmpty();
-      // this.checkBluetoothEnabled();
+    this.checkBluetoothEnabled();
   }
 
   checkIfListIsEmpty(){
-    if(this.testList.length < 1){
+    // console.log("wsdfkjhskdfhksdfhksdfhksdfhksdfh");
+    
+    if(this.pairedList == undefined){
       this.isSearchedEmpty = true;
     }else{
       this.isSearchedEmpty = false;
@@ -66,49 +70,32 @@ export class HomePage {
     });
   }
 
-  testSelectDevice(){
-    this.navCtrl.push(PairingPage);
-  }
   
-  selectDevice(){
-    let connectedDevice = this.pairedList[this.pairedDeviceID];
-    if(!connectedDevice.address){
-      this.showError("Select paired device to connect");
-      return;
+  goToNext(){
+    if(this.isSearchedEmpty){
+      this.showToast("No devices selected");
+    }else{
+    this.navCtrl.push(PairingPage, {"address": this.address, "name": this.name});              
     }
-
-    let address = connectedDevice.address;
-    let name = connectedDevice.name;
-
-    this.connect(address);
   }
+  selectDevice(index){
 
-  connect(address){
-    // attempt to connect device with specidied address
-    this.bluetoothSerial.connect(address).subscribe(success =>{
-      this.deviceConnected();
-      this.showToast("Successfully connected");
-    }, error =>{
-      this.showError("Error connecting to device");
-    });
-  }
+    this.pairedDeviceID = index;
+    
+    // let connectedDevice = this.pairedList[this.pairedDeviceID];
+    // if(!connectedDevice.address){
+    //   this.showError("Select paired device to connect");
+    //   return;
+    // }
 
-  deviceConnected(){
-    this.bluetoothSerial.subscribe('\n').subscribe(success =>{
-      this.handledata(success);
-      this.showToast("Connected Succesfully");
-    }, error =>{
-        this.showError(error);
-    });
-  }
+    // this.address = connectedDevice.address;
+    // this.name = connectedDevice.name;
 
-  deviceDisconnected(){
-    this.bluetoothSerial.disconnect();
-    this.showToast("device disconnected");
-  }
 
-  handledata(data){
-    this.showToast(data);
+    this.address = this.testList[this.pairedDeviceID].address;
+    this.name = this.testList[this.pairedDeviceID].name;
+    
+
   }
 
   showError(error){

@@ -15,24 +15,40 @@
     <ion-grid>
 
 
-      <ion-row style="margin-bottom: 20px;" *ngFor="let device of testList">
+      <!-- <ion-row style="margin-bottom: 20px;" *ngFor="let device of testList">
         <ion-col col-1 style="margin-right: 10px;">
-            <ion-checkbox>
-
-              </ion-checkbox>
+            <ion-radio>
+                ldfkgnldkfjgljkl
+            </ion-radio>
         </ion-col>
 
         <ion-col style="color: white">
           {{device.name}}<br>{{device.address}}
         </ion-col>
        
-      </ion-row>
+      </ion-row> -->
+
+
+
+      <ion-list radio-group>
+        <ion-item no-lines style="background: transparent" *ngFor="let device of pairedList; let i=index;">
+          <ion-label color="light">{{device.name}}<br>{{device.address}}</ion-label>
+          <ion-radio (ionSelect)="selectDevice(i)"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <!-- <ion-list radio-group>
+          <ion-item *ngFor="let device of testList; let index=index;">
+            <ion-label>{{device.name}}<br>{{device.address}}</ion-label>
+            <ion-radio (select)=selectedValue($event) [value]="selectedd"></ion-radio>
+          </ion-item>
+        </ion-list> -->
     </ion-grid>
 
-    <p *ngIf="isSearchedEmpty" style="bottom: 15vh; font-size: 19px; position: absolute; color:white" align="center">No devices found<br>please check that your device is at pairing mode</p>
+    <p *ngIf="isSearchedEmpty" style="bottom: 15vh; font-size: 19px; color:white" align="center">No devices found<br>please check that your device is at pairing mode</p>
 
     <p class="bottombutton" align="center">
-      <button ion-button block color="primary" (click)="testSelectDevice()">Connect</button></p>
+      <button ion-button block color="primary" (click)="goToNext()">Connect</button></p>
   </div>
 
 </ion-content>

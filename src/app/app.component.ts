@@ -8,11 +8,12 @@ import { HomePage } from '../pages/home/home';
 import { AlertledPage } from '../pages/alertled/alertled';
 import { SoundprefPage } from '../pages/soundpref/soundpref';
 import { NeverforgetalertPage } from '../pages/neverforgetalert/neverforgetalert';
+import { PairingPage } from '../pages/pairing/pairing';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = NeverforgetalertPage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
