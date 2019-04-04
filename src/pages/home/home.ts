@@ -20,7 +20,13 @@ export class HomePage {
   testList = [];
   // testList = [{},{},{}];  
   devicetype;
-  isSearchedEmpty = true;
+  isSearchedEmpty = false;
+
+  isforsearched = false;
+  isforpaired = true;
+
+
+  searchedList = [{}, {}, {}];
 
   constructor(public navCtrl: NavController,
     public alertCtrl: AlertController,
@@ -28,13 +34,22 @@ export class HomePage {
     public bluetoothSerial: BluetoothSerial
   ) {
 
-    // this.testList = [
-    //   {name: "UA42QT-V", address: "xx.xx.xx.xx.xx"},
-    //   {name: "UA43QT-V", address: "xx.xx.xx.xx.xx"},
-    //   {name: "CK-08", address: "xx.xx.xx.xx.xx"},      
-    //  ];
 
-    this.devicetype = "searched";
+    this.devicetype = "paired";
+
+    // if(this.devicetype == "searched"){
+    //   console.log(this.devicetype);
+    //   this.isSearchedEmpty = true;
+    //   this.isforsearched = true;
+    //   this.isforpaired = false;
+    // }else if(this.devicetype == "searched"){
+    //   console.log(this.devicetype);      
+    //   this.isSearchedEmpty = false;
+    //   this.isforpaired = true;
+    //   this.isforsearched = false;
+      
+    // }
+
     this.checkIfListIsEmpty();
     this.checkBluetoothEnabled();
   }
@@ -42,11 +57,11 @@ export class HomePage {
   checkIfListIsEmpty(){
     // console.log("wsdfkjhskdfhksdfhksdfhksdfhksdfh");
     
-    if(this.pairedList == undefined){
-      this.isSearchedEmpty = true;
-    }else{
-      this.isSearchedEmpty = false;
-    }
+    // if(this.pairedList == undefined){
+    //   this.isSearchedEmpty = true;
+    // }else{
+    //   this.isSearchedEmpty = false;
+    // }
   }
 
   checkBluetoothEnabled(){
@@ -72,21 +87,25 @@ export class HomePage {
 
   
   goToNext(){
-    if(this.isSearchedEmpty){
-      this.showToast("No devices selected");
-    }else{
+    // if(this.isSearchedEmpty){
+    //   this.showToast("No devices selected");
+    // }
+    // else{
     this.navCtrl.push(PairingPage, {"address": this.address, "name": this.name});              
-    }
+    // }
+    this.showToast("Trying to connect to " + this.name);
   }
+
+
   selectDevice(index){
 
     this.pairedDeviceID = index;
     
-    // let connectedDevice = this.pairedList[this.pairedDeviceID];
-    // if(!connectedDevice.address){
-    //   this.showError("Select paired device to connect");
-    //   return;
-    // }
+    let connectedDevice = this.pairedList[this.pairedDeviceID];
+    if(!connectedDevice.address){
+      this.showError("Select paired device to connect");
+      return;
+    }
 
     // this.address = connectedDevice.address;
     // this.name = connectedDevice.name;

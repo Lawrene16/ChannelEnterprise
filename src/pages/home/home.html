@@ -30,7 +30,14 @@
 
 
 
-      <ion-list radio-group>
+      <ion-list radio-group *ngIf="isforsearched">
+        <ion-item no-lines style="background: transparent" *ngFor="let device of searchedList; let i=index;">
+          <ion-label color="light">device.name<br>device.address</ion-label>
+          <ion-radio (ionSelect)="selectDevice(i)"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-list radio-group *ngIf="isforpaired">
         <ion-item no-lines style="background: transparent" *ngFor="let device of pairedList; let i=index;">
           <ion-label color="light">{{device.name}}<br>{{device.address}}</ion-label>
           <ion-radio (ionSelect)="selectDevice(i)"></ion-radio>
